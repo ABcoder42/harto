@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="#eff1f7"
+    android:padding="16dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/firstcon"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+
+                <ImageView
+                    android:id="@+id/iconMenu"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_state1"
+                    android:contentDescription="Menu"
+                    android:padding="5dp"
+                    android:src="@drawable/menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.936"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.059"
+                    app:tint="#ffffff" />
+
+                <TextView
+                    android:id="@+id/txt_heartrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="00"
+                    android:textColor="#4178e1"
+                    android:textSize="70dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.6"/>
+
+                <TextView
+
+                    android:id="@+id/txt_bpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="BPM"
+                    android:textColor="#4178e1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_heartrate"
+                    app:layout_constraintVertical_bias="0.6" />
+
+                <com.example.harto.hadlers.HalfCircleProgressBar
+                    android:id="@+id/halfProgressBar"
+                    android:layout_width="259dp"
+                    android:layout_height="259dp"
+                    android:layout_centerInParent="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--   second layout     -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/secondcon"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/average_bpm_con"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/average_bpm_con"
+                app:layout_constraintTop_toBottomOf="@+id/firstcon"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/second_con_main_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="186dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.169"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/condition_con"
+                        android:layout_width="140dp"
+                        android:layout_height="186dp"
+                        android:background="@drawable/rounded_box"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <ImageView
+                            android:id="@+id/iconHeart"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/alert_bg_normal"
+                            android:contentDescription="Heart icon"
+                            android:src="@drawable/heart"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.145"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.102"
+                            app:tint="#ffffff" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="CONDITION"
+                            android:textColor="#5a5f73"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/iconHeart"
+                            app:layout_constraintTop_toBottomOf="@+id/iconHeart"
+                            app:layout_constraintVertical_bias="0.063" />
+
+                        <TextView
+                            android:id="@+id/text_cond_alert"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text=""
+                            android:textColor="#5a5f73"
+                            android:textFontWeight="600"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView2"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2"
+                            app:layout_constraintVertical_bias="0.382" />
+
+                        <TextView
+                            android:id="@+id/text_cond_desc"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="none"
+                            android:fontFamily="sans-serif-condensed"
+                            android:scrollHorizontally="false"
+                            android:singleLine="false"
+                            android:text=""
+                            android:textColor="#5a5f73"
+                            android:textSize="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/text_cond_alert"
+                            app:layout_constraintTop_toBottomOf="@+id/text_cond_alert"
+                            app:layout_constraintVertical_bias="0.333" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/hign_bpm_con"
+                        android:layout_width="140dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/rounded_box"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.164"
+                        app:layout_constraintStart_toEndOf="@+id/condition_con"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="HIGHEST"
+                            android:textColor="#5a5f73"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.172"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.216" />
+
+                        <TextView
+                            android:id="@+id/text_Highest_BPM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="0"
+                            android:textColor="#5a5f73"
+                            android:textFontWeight="600"
+                            android:textSize="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView3"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3"
+                            app:layout_constraintVertical_bias="0.382" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="BPM"
+                            android:textColor="#5a5f73"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_Highest_BPM"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.083"
+                            app:layout_constraintStart_toEndOf="@+id/text_Highest_BPM"
+                            app:layout_constraintTop_toTopOf="@+id/text_Highest_BPM"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@drawable/alert_bg_critical_low"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.771"
+                            app:layout_constraintStart_toEndOf="@+id/textView3"
+                            app:layout_constraintTop_toTopOf="@+id/textView3"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:tint="#ffffff" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/low_bpm_con"
+                        android:layout_width="140dp"
+                        android:layout_height="88dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_box"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.164"
+                        app:layout_constraintStart_toEndOf="@+id/condition_con"
+                        app:layout_constraintTop_toBottomOf="@+id/hign_bpm_con"
+                        app:layout_constraintVertical_bias="1.0">
+
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="LOWEST"
+                            android:textColor="#5a5f73"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.172"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.216" />
+
+                        <TextView
+                            android:id="@+id/text_MINIMUM_BPM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="0"
+                            android:textColor="#5a5f73"
+                            android:textFontWeight="600"
+                            android:textSize="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView4"
+                            app:layout_constraintTop_toBottomOf="@+id/textView4"
+                            app:layout_constraintVertical_bias="0.382" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="BPM"
+                            android:textColor="#5a5f73"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_MINIMUM_BPM"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.083"
+                            app:layout_constraintStart_toEndOf="@+id/text_MINIMUM_BPM"
+                            app:layout_constraintTop_toTopOf="@+id/text_MINIMUM_BPM"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:background="@drawable/alert_bg_low"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.771"
+                            app:layout_constraintStart_toEndOf="@+id/textView4"
+                            app:layout_constraintTop_toTopOf="@+id/textView4"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:tint="#ffffff" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/average_bpm_con"
+                android:layout_width="293dp"
+                android:layout_height="65dp"
+                android:background="@drawable/rounded_box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondcon"
+                app:layout_constraintVertical_bias="0.056">
+
+                <ImageView
+                    android:id="@+id/iconTIP"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/rounded_box_blue2"
+                    android:contentDescription="Heart icon"
+                    android:padding="5dp"
+                    android:src="@drawable/insight"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.48"
+                    app:tint="#ffffff" />
+
+                <TextView
+
+                    android:id="@+id/tipTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Take deep breaths"
+                    android:textColor="#5a5f73"
+                    android:textFontWeight="500"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iconTIP"
+                    app:layout_constraintStart_toEndOf="@+id/iconTIP"
+                    app:layout_constraintTop_toTopOf="@+id/iconTIP"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+
+                    android:id="@+id/tips_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Relaxation helps lower your heart rate naturally."
+                    android:textAlignment="textStart"
+                    android:textColor="#5a5f73"
+                    android:textFontWeight="300"
+                    android:textSize="11dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iconTIP"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tipTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tipTitle"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCallXML"
+                android:layout_width="293dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/btn_state1"
+                android:text="Send Emergency"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/average_bpm_con"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toStartOf="@+id/average_bpm_con"
+                app:layout_constraintTop_toBottomOf="@+id/average_bpm_con"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>

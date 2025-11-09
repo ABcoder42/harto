@@ -1,0 +1,119 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#eff1f7">
+
+    <!-- Centered container for all content -->
+    <LinearLayout
+        android:id="@+id/centerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/harto_logo"
+            android:layout_width="88dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="24dp"
+            app:srcCompat="@drawable/harto_logo_blue" />
+
+        <!-- Phone input -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_txt_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:paddingTop="7dp"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="false"
+                app:ccp_showFullName="false"
+                app:ccp_textSize="13dp" />
+
+            <EditText
+                android:id="@+id/edittxtPhonelog"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="@android:color/transparent"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:paddingStart="8dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/edittxtPasslog"
+            android:layout_width="311dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_txt_bg"
+            android:drawableStart="@drawable/lock"
+            android:drawableEnd="@drawable/eye"
+            android:drawablePadding="10dp"
+            android:drawableTint="#5a5f73"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:textColor="#5a5f73"
+            android:textColorHint="#5a5f73"
+            android:textSize="16dp" />
+
+        <!-- Forget password -->
+        <TextView
+            android:id="@+id/forgetpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Forget password?"
+            android:textColor="@color/color_state1"
+            android:textSize="14sp"
+            android:gravity="end"/>
+
+        <!-- Login button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLoginXML"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_state1"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <!-- Create account -->
+        <TextView
+            android:id="@+id/createacc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Create New Account?"
+            android:textAlignment="center"
+            android:textColor="@color/color_state1"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

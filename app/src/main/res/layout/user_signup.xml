@@ -1,0 +1,219 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#eff1f7"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Cancel"
+                android:textColor="@color/color_state1"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnSignupXML"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/btnSignupXML"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignupXML"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/harto_logo"
+                android:layout_width="88dp"
+                android:layout_height="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/harto_logo_blue" />
+
+            <EditText
+                android:id="@+id/edittxtnameReg"
+                android:layout_width="311dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints="Full Name"
+                android:background="@drawable/edit_txt_bg"
+                android:digits=" AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzÁáÂâÃãÀàÇçÉéÊêÍíÓóÔôÕõÚú"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="10dp"
+                android:drawableTint="#5a5f73"
+                android:ems="10"
+                android:hint="Full Name"
+                android:textSize="16dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="30dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/harto_logo"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/edittxtEmailReg"
+                android:layout_width="311dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="8dp"
+                android:autofillHints="Email"
+                android:background="@drawable/edit_txt_bg"
+                android:drawableStart="@drawable/envelope"
+                android:drawablePadding="10dp"
+                android:drawableTint="#5a5f73"
+                android:textSize="16dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="30dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                app:layout_constraintEnd_toEndOf="@+id/edittxtnameReg"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="@+id/edittxtnameReg"
+                app:layout_constraintTop_toBottomOf="@+id/edittxtnameReg"
+                tools:ignore="TextContrastCheck" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_txt_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/edittxtEmailReg"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="@+id/edittxtEmailReg"
+                app:layout_constraintTop_toBottomOf="@+id/edittxtEmailReg">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="49dp"
+                    android:paddingTop="7dp"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_showFlag="false"
+                    app:ccp_showFullName="false"
+                    app:ccp_textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/edittxtPhoneReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Phone number"
+                    android:inputType="phone"
+                    android:paddingStart="8dp"
+                    android:textColor="#5a5f73"
+                    android:textColorHint="#5a5f73"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edittxtPassReg"
+                android:layout_width="311dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="8dp"
+                android:autofillHints="Password"
+                android:background="@drawable/edit_txt_bg"
+                android:drawableStart="@drawable/lock"
+                android:drawableEnd="@drawable/eye"
+                android:drawablePadding="10dp"
+                android:drawableTint="#5a5f73"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="15dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/edittxtComPassReg"
+                android:layout_width="311dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="8dp"
+                android:autofillHints="password"
+                android:background="@drawable/edit_txt_bg"
+                android:drawableStart="@drawable/unlock"
+                android:drawableEnd="@drawable/eye"
+                android:drawablePadding="10dp"
+                android:drawableTint="#5a5f73"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="15dp"
+                android:textSize="16dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                app:layout_constraintEnd_toEndOf="@+id/edittxtPassReg"
+                app:layout_constraintStart_toStartOf="@+id/edittxtPassReg"
+                app:layout_constraintTop_toBottomOf="@+id/edittxtPassReg"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/txttermsReg"
+                android:layout_width="275dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/by_clicking"
+                android:textColor="#5a5f73"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/edittxtComPassReg"
+                app:layout_constraintStart_toStartOf="@+id/edittxtComPassReg"
+                app:layout_constraintTop_toBottomOf="@+id/edittxtComPassReg" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignupXML"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_state1"
+                android:text="Sign up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/txttermsReg"
+                app:layout_constraintStart_toStartOf="@+id/txttermsReg"
+                app:layout_constraintTop_toBottomOf="@+id/txttermsReg" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

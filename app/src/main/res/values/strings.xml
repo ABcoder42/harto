@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">harto</string>
+
+    <string name="forgot_pass">
+        Please enter your phone number to reset your password!
+    </string>
+
+    <string name="by_clicking" >
+        By clicking on Sign Up below, you confirm that you have read and agree to our Terms and Conditions to use the services.
+    </string>
+
+    <string name="pass_reset" tools:ignore="StringEscaping">
+        Enter your new password to reset account
+    </string>
+
+    <string name="contact_person" >
+        Enter New person name &amp; number to update your Contact person details.
+    </string>
+
+    <string name="edit_main_info" >
+        Enter your details to update your information.
+    </string>
+
+
+
+
+
+
+</resources>

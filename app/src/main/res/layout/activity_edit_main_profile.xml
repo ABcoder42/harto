@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eff1f7"
+    android:padding="16dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Cancel"
+                android:textColor="@color/color_state1"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btnUpdateXML"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="@+id/btnUpdateXML"
+                app:layout_constraintTop_toBottomOf="@+id/btnUpdateXML"
+                app:layout_constraintVertical_bias="0.027" />
+
+            <ImageView
+                android:id="@+id/harto_logo"
+                android:layout_width="88dp"
+                android:layout_height="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/harto_logo_blue"
+                tools:layout_editor_absoluteY="101dp" />
+
+            <TextView
+                android:id="@+id/please_enter"
+                android:layout_width="296dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/edit_main_info"
+                android:textAlignment="center"
+                android:textColor="@color/color_state1"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/harto_logo" />
+
+            <EditText
+                android:id="@+id/edittxtnameReg"
+                android:layout_width="311dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints="Full Name"
+                android:background="@drawable/edit_txt_bg"
+                android:digits=" AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzÁáÂâÃãÀàÇçÉéÊêÍíÓóÔôÕõÚú"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="10dp"
+                android:drawableTint="#5a5f73"
+                android:ems="10"
+                android:text=""
+                android:hint="Full Name"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="30dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/please_enter"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/edittxtEmailReg"
+                android:layout_width="311dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="8dp"
+                android:autofillHints="Email"
+                android:background="@drawable/edit_txt_bg"
+                android:drawableStart="@drawable/envelope"
+                android:drawablePadding="10dp"
+                android:drawableTint="#5a5f73"
+                android:textSize="16dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="12dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="30dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:textColor="#5a5f73"
+                android:textColorHint="#5a5f73"
+                app:layout_constraintEnd_toEndOf="@+id/edittxtnameReg"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="@+id/edittxtnameReg"
+                app:layout_constraintTop_toBottomOf="@+id/edittxtnameReg"
+                tools:ignore="TextContrastCheck" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_txt_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/edittxtEmailReg"
+                app:layout_constraintHorizontal_bias="0.285"
+                app:layout_constraintStart_toStartOf="@+id/edittxtEmailReg"
+                app:layout_constraintTop_toBottomOf="@+id/edittxtEmailReg">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="49dp"
+                    android:paddingTop="7dp"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_showFlag="false"
+                    app:ccp_showFullName="false"
+                    app:ccp_textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/edittxtPhoneReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Phone number"
+                    android:inputType="phone"
+                    android:paddingStart="8dp"
+                    android:textColor="#5a5f73"
+                    android:textColorHint="#5a5f73"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpdateXML"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_state1"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>
