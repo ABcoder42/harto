@@ -1,6 +1,5 @@
 package com.example.harto.user_registration;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -17,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 
@@ -43,11 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private CountryCodePicker ccp;
     private LinearLayout phoneLayout;
-    private final Handler connectionHandler = new Handler();
-    private boolean isWifiConnected = false;
-    private Runnable connectionChecker;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login);
